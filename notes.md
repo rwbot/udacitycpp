@@ -64,7 +64,12 @@ int main(){
   cout << "Hello World"
 }
 ```
-
+Using the specific namespace will combat most of the problems with implicit naming:
+```
+using std::cout;
+using std::endl;
+using std::setw;
+```
 
 # Writing to the Console
 
@@ -76,32 +81,103 @@ std:cout << variableName    // Prints Value of variableName to Console
 int num
 std::cout << "The value of num is " << num << "\n";
 // \n adds a new line
+
+// endl also adds new Guideline
+std::cout << "size of int =" << sizeof(int) << endl;
+
 ```
 
 
 
+# Enumerated Constants (Enum)
+```
+enum type_name {
+  value1,
+  value2,
+  value3,
+  .
+  .
+} object_names;
+```
+
+Example:
+```
+//define MONTH as having 12 possible values
+    enum MONTHS {Jan, Feb, Mar, Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec};
+
+    //define bestMonth as a variable type MONTH
+    MONTH bestMonth;
+
+    //assign bestMonth one of the values of MONTH
+    bestMonth = Jan;
+
+    //now we can check the value of bestMonths just
+    //like any other variable
+    if(bestMonth == Jan)
+    {
+        cout<<"I'm not so sure January is the best month\n";
+    }
+```
+
+# Formatting Output With Escape Sequences
+
+```
+#include <iomanip>
+
+std::cout<<"\n\nThe text without any formating\n";
+std::cout<<"Ints"<<"Floats"<<"Doubles"<< "\n";
+std::cout<<"\nThe text with setw(15)\n";
+std::cout<<"Ints"<<std::setw(15)<<"Floats"<<std::setw(15)<<"Doubles"<< "\n";
+std::cout<<"\n\nThe text with tabs\n";
+std::cout<<"Ints\t"<<"Floats\t"<<"Doubles"<< "\n";
+```
+Output:
+```
+The text without any formating
+IntsFloatsDoubles
+
+The text with setw(15)
+Ints         Floats        Doubles
+
+The text with tabs
+Ints    Floats    Doubles
+```
 
 
+#include <iostream>
+#include <iomanip>
+
+int main()
+{
+    int a = 45;
+    float b = 45.323;
+    double c = 45.5468;
+    int aa = a + 9;
+    float bb = b + 9;
+    double cc = c + 9;
+    int aaa = aa + 9;
+    float bbb = bb + 9;
+    double ccc = cc + 9;
+
+    std::cout << "Ints" << std::setw(12) << "Floats" << std::setw(12) << "Doubles" << std::endl;
+    std::cout << a << std::setw(12) << b << std::setw(12) << c << std::endl;
+    std::cout << aa << std::setw(12) << bb << std::setw(12) << cc << std::endl;
+    std::cout << aaa << std::setw(12) << bbb << std::setw(12) << ccc << std::endl;
+
+    return 0;
+}
 
 
+# File IO
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Include the ```<fstream>``` library
+- Create a stream (input, output, both)
+     - ```ofstream myfile;``` (for writing to a file)
+     - ```ifstream myfile;``` (for reading a file)
+     - ```fstream myfile;```(for reading and writing a file)
+- Open the file  ```myfile.open(“filename”);```
+- Write or read the file
+- Close the file ```myfile.close();```
 
 
 
