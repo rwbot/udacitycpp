@@ -1,12 +1,10 @@
-```
 
-```
----
 # Comments
-/*The start of a comment block.
-Everything between "/* "and " */ "
+/*
+The start of a comment block.
+Everything between "/* "and " * / "
 is in the comment block.
-The end of a comment block.*/
+The end of a comment block. * /
 ---
 
 # Style Guide
@@ -40,10 +38,13 @@ int main() {
 ```
 g++ main.cpp -o main.out
 ```
-*g++* is compiler
-*main.cpp* is name of file
-*-o* Flag for naming output
-*main.out* Name of output file
+**g++** is compiler
+
+**main.cpp** is name of file
+
+**-o** Flag for naming output
+
+**main.out** Name of output file
 
 # Running
 ```
